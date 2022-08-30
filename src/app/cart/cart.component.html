@@ -1,0 +1,51 @@
+<ng-container *ngIf="products.length!=0">
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Sl.no</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+
+           <tbody *ngFor="let item of products; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{item.title}}</td>
+            <td><img width="100px" height="100px" src="{{item.image}}" alt=""></td>
+            <td width="25%">{{item.description}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.total}}</td>
+            <td><button (click)="removeitem(item)"><i class="fa-solid fa-trash fa-2x text-danger"></i></button></td>
+           </tbody>
+
+           <tr>
+            <td colspan="4" ></td>
+            
+            <td><button (click)="emptycart()" class="btn btn-danger" >Empty cart</button></td>
+            <td><button routerLink="/products" class="btn btn-success" >Shop more</button></td>
+            <td>GrandTotal:{{grandtotal}}</td>
+            </tr>
+        
+
+        </table>
+
+</div>
+</ng-container>
+
+<ng-container *ngIf="products.length==0">
+<div class="container" style="text-align: center; margin-top: 60px;">
+    <h1>My cart</h1>
+    <div style="margin-top: 70px;">
+        <h3>cart is empty</h3>
+        <button class="btn btn-warning" routerLink="/products">shop now</button>
+    </div>
+</div>
+</ng-container>
