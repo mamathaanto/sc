@@ -6,11 +6,11 @@ import {map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class UserService {
-//http://fakestoreapi.com/products
+
   constructor(private http:HttpClient) { }
     getproduct(){
     
-    return this.http.get<any>("https://spoonacular.com/food-api")
+    return this.http.get<any>("http://fakestoreapi.com/products")
     .pipe(map((res:any)=>{
       return res;
     }))
