@@ -1,4 +1,4 @@
-# Shocart
+# Shopping cart
 
 
 
